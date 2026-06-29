@@ -61,3 +61,4 @@ For more information on using the Angular CLI, including detailed command refere
 ## Fonctionnalités
 
 - Pipes XOF et téléphone
+- Agent — Listing des wallets paginé
