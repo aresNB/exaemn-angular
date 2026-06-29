@@ -68,3 +68,4 @@ For more information on using the Angular CLI, including detailed command refere
 - Sur : http://localhost:4200/dashboard | Client — Dashboard avec solde en temps réel (Signals)
 - Client — Transfert d'argent
 - Client — Consultation et paiement de factures
+- Client — Historique des transactions

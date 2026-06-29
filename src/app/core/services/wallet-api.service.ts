@@ -37,7 +37,8 @@ export interface PayFacturesDto {
 export interface Transaction {
   id: number;
   type: string;
-  amount: number;
+  montant: number;
+  frais: number;
   date: string;
   description: string;
 }
