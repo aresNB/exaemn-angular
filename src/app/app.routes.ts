@@ -22,6 +22,11 @@ export const routes: Routes = [
       import('./features/agent/deposit-withdraw.component').then(m => m.DepositWithdrawComponent)
   },
   {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./features/client/dashboard/dashboard.component').then(m => m.DashboardComponent)
+  },
+  {
     path: '',
     redirectTo: 'admin/wallets',
     pathMatch: 'full'
