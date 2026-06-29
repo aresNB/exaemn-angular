@@ -41,6 +41,11 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./features/client/transactions/transactions.component').then(m => m.TransactionsComponent)
 },
+{
+  path: 'admin/seeder',
+  loadComponent: () =>
+    import('./features/agent/seeder.component').then(m => m.SeederComponent)
+},
   {
     path: '',
     redirectTo: 'admin/wallets',

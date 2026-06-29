@@ -15,6 +15,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <a routerLink="/admin/wallets/create" routerLinkActive="active">Créer wallet</a>
         <a routerLink="/admin/wallets/search" routerLinkActive="active">Rechercher</a>
         <a routerLink="/admin/deposit-withdraw" routerLinkActive="active">Dépôt / Retrait</a>
+        <a routerLink="/admin/seeder" routerLinkActive="active">Seeder</a>
 
         <span class="section">Client</span>
         <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>

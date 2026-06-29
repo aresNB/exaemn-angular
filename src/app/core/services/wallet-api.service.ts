@@ -86,4 +86,12 @@ export class WalletApiService {
   getTransactions(phone: string): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(`${this.BASE}/${phone}/transactions`);
   }
+
+  seed(numWallets: number, eventsPerWallet: number): Observable<string> {
+  return this.http.post(
+    `${this.BASE}/seed?numWallets=${numWallets}&eventsPerWallet=${eventsPerWallet}`,
+    {},
+    { responseType: 'text' }
+  );
+}
 }

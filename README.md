@@ -70,3 +70,4 @@ For more information on using the Angular CLI, including detailed command refere
 - Client — Consultation et paiement de factures
 - Client — Historique des transactions
 - Design global (thème sombre/doré, tables, formulaires, balance card)
+- Agent — Seeder de données
