@@ -16,6 +16,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/agent/wallet-search.component').then(m => m.WalletSearchComponent)
   },
+    {
+    path: 'admin/deposit-withdraw',
+    loadComponent: () =>
+      import('./features/agent/deposit-withdraw.component').then(m => m.DepositWithdrawComponent)
+  },
   {
     path: '',
     redirectTo: 'admin/wallets',
