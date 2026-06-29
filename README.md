@@ -66,3 +66,4 @@ For more information on using the Angular CLI, including detailed command refere
 - Agent — Recherche par téléphone
 - Sur : http://localhost:4200/admin/deposit-withdraw | ajouter de : Agent — Dépôt et retrait
 - Sur : http://localhost:4200/dashboard | Client — Dashboard avec solde en temps réel (Signals)
+- Client — Transfert d'argent

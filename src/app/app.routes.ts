@@ -26,6 +26,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/client/dashboard/dashboard.component').then(m => m.DashboardComponent)
   },
+   {
+    path: 'transfer',
+    loadComponent: () =>
+      import('./features/client/transfer/transfer.component').then(m => m.TransferComponent)
+  },
   {
     path: '',
     redirectTo: 'admin/wallets',
