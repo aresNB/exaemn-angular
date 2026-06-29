@@ -32,6 +32,11 @@ export const routes: Routes = [
       import('./features/client/transfer/transfer.component').then(m => m.TransferComponent)
   },
   {
+  path: 'bills',
+  loadComponent: () =>
+    import('./features/client/bills/bills.component').then(m => m.BillsComponent)
+},
+  {
     path: '',
     redirectTo: 'admin/wallets',
     pathMatch: 'full'
