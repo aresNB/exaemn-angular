@@ -1,4 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
+  --color-accent-soft: #fef3c7;
+
+  --color-dark: #1e293b;
+  --color-dark-soft: #334155;
+
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #cbd5e1;
+
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8fafc;
+
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fee2e2;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 2px 12px rgba(15, 23, 42, 0.08);
+
+  --transition-fast: 0.15s ease;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -7,34 +43,47 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Focus visible cohérent partout, accessibilité */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
 .container {
   max-width: 900px;
   margin: 32px auto;
   padding: 24px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 24px;
-  color: #1e293b;
-  border-bottom: 2px solid #f59e0b;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-accent);
   padding-bottom: 8px;
 }
 
 h3 {
   font-size: 1.1rem;
   margin-bottom: 16px;
-  color: #334155;
+  color: var(--color-dark-soft);
 }
 
-/* FORMS */
+/* ============================================
+   FORMS
+   ============================================ */
 form div {
   margin-bottom: 16px;
   display: flex;
@@ -45,51 +94,89 @@ form div {
 label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--color-text-muted);
 }
 
 input, select {
   padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-size: 0.95rem;
   outline: none;
-  transition: border 0.2s;
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 input:focus, select:focus {
-  border-color: #f59e0b;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
 }
 
-span[style] {
-  font-size: 0.8rem;
-  color: #ef4444;
-}
-
-/* BUTTONS */
-button {
-  padding: 10px 20px;
-  background: #f59e0b;
-  color: #1e293b;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 0.9rem;
-}
-
-button:hover {
-  background: #d97706;
-}
-
-button:disabled {
-  background: #e2e8f0;
-  color: #94a3b8;
+input:disabled, select:disabled {
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
   cursor: not-allowed;
 }
 
-/* TABS */
+/* Remplace l'ancien span[style] -> utilise cette classe dans tes templates */
+.error-text {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+button {
+  padding: 10px 20px;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* Variantes — à ajouter dans tes templates pour les actions secondaires/destructives */
+button.btn-secondary {
+  background: var(--color-surface-soft);
+  color: var(--color-dark-soft);
+  border: 1px solid var(--color-border);
+}
+
+button.btn-secondary:hover:not(:disabled) {
+  background: #eef2f6;
+}
+
+button.btn-danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+button.btn-danger:hover:not(:disabled) {
+  background: #fecaca;
+}
+
+/* ============================================
+   TABS
+   ============================================ */
 .tabs {
   display: flex;
   gap: 8px;
@@ -97,16 +184,18 @@ button:disabled {
 }
 
 .tabs button {
-  background: #e2e8f0;
-  color: #475569;
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
 }
 
 .tabs button.active {
-  background: #f59e0b;
-  color: #1e293b;
+  background: var(--color-accent);
+  color: var(--color-dark);
 }
 
-/* TABLE */
+/* ============================================
+   TABLE
+   ============================================ */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -115,7 +204,7 @@ table {
 }
 
 thead {
-  background: #1e293b;
+  background: var(--color-dark);
   color: white;
 }
 
@@ -130,15 +219,17 @@ td {
 }
 
 tr:hover {
-  background: #f8fafc;
+  background: var(--color-surface-soft);
 }
 
-/* BALANCE CARD */
+/* ============================================
+   BALANCE CARD
+   ============================================ */
 .balance-card {
-  background: #1e293b;
+  background: var(--color-dark);
   color: white;
   padding: 24px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   text-align: center;
   margin-bottom: 24px;
 }
@@ -154,49 +245,59 @@ tr:hover {
   margin-bottom: 4px;
 }
 
-.balance {
+.balance-card .balance {
   font-size: 2rem;
   font-weight: bold;
-  color: #f59e0b !important;
-  margin-bottom: 16px !important;
+  color: var(--color-accent);
+  margin-bottom: 16px;
 }
 
 .balance-card button {
   margin: 4px;
 }
 
-/* MESSAGES */
-p[style*="green"] {
-  background: #dcfce7;
-  color: #16a34a;
+/* ============================================
+   MESSAGES
+   Remplace les anciens p[style*="green"] / p[style*="red"]
+   -> dans tes templates : <p class="message message--success">...
+   ============================================ */
+.message {
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   margin-top: 16px;
+  font-size: 0.9rem;
 }
 
-p[style*="red"] {
-  background: #fee2e2;
-  color: #dc2626;
-  padding: 10px 16px;
-  border-radius: 8px;
-  margin-top: 16px;
+.message--success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
 }
 
-/* WALLET DETAILS */
+.message--error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+/* ============================================
+   WALLET DETAILS
+   ============================================ */
 .wallet-details {
-  background: #f8fafc;
+  background: var(--color-surface-soft);
   padding: 16px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   margin-top: 24px;
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid var(--color-accent);
 }
 
 .wallet-details p {
   margin-bottom: 8px;
 }
 
+/* ============================================
+   LINKS
+   ============================================ */
 a {
-  color: #f59e0b;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
