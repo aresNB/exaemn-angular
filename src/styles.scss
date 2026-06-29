@@ -1,1 +1,205 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #1e293b;
+  border-bottom: 2px solid #f59e0b;
+  padding-bottom: 8px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #334155;
+}
+
+/* FORMS */
+form div {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #f59e0b;
+}
+
+span[style] {
+  font-size: 0.8rem;
+  color: #ef4444;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 20px;
+  background: #f59e0b;
+  color: #1e293b;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background: #d97706;
+}
+
+button:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tabs button {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.tabs button.active {
+  background: #f59e0b;
+  color: #1e293b;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+
+thead {
+  background: #1e293b;
+  color: white;
+}
+
+th {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+  background: #f8fafc;
+}
+
+/* BALANCE CARD */
+.balance-card {
+  background: #1e293b;
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.balance-card p {
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.balance-card h3 {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f59e0b !important;
+  margin-bottom: 16px !important;
+}
+
+.balance-card button {
+  margin: 4px;
+}
+
+/* MESSAGES */
+p[style*="green"] {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+p[style*="red"] {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+/* WALLET DETAILS */
+.wallet-details {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+  border-left: 4px solid #f59e0b;
+}
+
+.wallet-details p {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
