@@ -7,6 +7,11 @@ export const routes: Routes = [
       import('./features/agent/wallet-list.component').then(m => m.WalletListComponent)
   },
   {
+    path: 'admin/wallets/create',
+    loadComponent: () =>
+      import('./features/agent/wallet-create.component').then(m => m.WalletCreateComponent)
+  },
+  {
     path: '',
     redirectTo: 'admin/wallets',
     pathMatch: 'full'
